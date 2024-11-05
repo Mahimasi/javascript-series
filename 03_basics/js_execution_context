@@ -1,0 +1,81 @@
+// JAVASCRIPT IS A SINGLE THREDED
+
+// JAVASCRIPT  EXECUTION CONTEXT:
+// {BLOCK OF CODES} ->global execution context(creation) -> stored in "this"
+// In browser ,"this" value is "window"
+
+//Types of  Execution context:
+// 1.) Global Execution context   2.) function Execution context  3.).Eval  Execution context
+
+// Execution of code in 3 phases : 1. global execution   2. memory creation phase(only memory allocation in this phase)     3. execution phase 
+
+
+// Example:
+//  let val1 = 10
+// let val2 = 5
+function addNum(num1, num2){
+    let total = num1 + num2
+    return total
+}
+let result1 = addNum(val1, val2) 
+let result2 = addNum(10, 2)
+
+
+// For let result1:
+// after  global Execution  ->  "this"
+
+ // first  Cycle: Memory phase:
+
+// 1. val1 -> undefined  // memory allocated for val1 
+// 2. val2 -> undefined  // memory allocated for val2
+// 3. addNum -> defintion // addNum takes fn definition 
+// result1 -> undefined     // memory allocated for result1
+// result2 -> undefined     // memory allocated for result2
+
+
+// Second Cycle :Execution  phase
+
+// val1 <- 10 
+// val <- 5
+// addNum -> new variable env. + execution thread (separate context)
+// memory phase :  // we will take varible from addNum fn def only
+// val1 --> undefined
+// val2 --> undefined
+// total --> undefined
+
+// Execution phase :
+// num1  --> 10 
+// num2 --> 5
+// total --> 15
+
+// total is being returned to global execution context -> "this" 
+//Note:  After completion of  new exceution context it will be  deleted 
+
+
+// For let result2:
+// after  global Execution  ->  "this"
+
+// first  Cycle: Memory phase:
+
+// 1. val1 -> undefined  // memory allocated for val1 
+// 2. val2 -> undefined  // memory allocated for val2
+// 3. addNum -> defintion // addNum takes fn definition 
+// result1 -> undefined     // memory allocated for result1
+// result2 -> undefined     // memory allocated for result2
+
+
+// Second Cycle :Execution  phase
+
+// addNum -> new variable env. + execution thread (separate context)
+// memory phase :  // we will take varible from addNum fn def only
+// val1 --> undefined
+// val2 --> undefined
+// total --> undefined
+
+// Execution phase :
+// num1  --> 10 
+// num2 --> 2
+// total --> 12
+
+// total is being returned to global execution context -> "this" 
+//Note:  After completion of  new exceution context it will be  deleted 

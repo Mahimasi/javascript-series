@@ -53,22 +53,25 @@ user.welcomeMessage()
 //  console.log(addTwo(3,4))   // 7
 
 //ARROW FUNCTION: 2. IMPLICIT RETURN  : without using return
-// e.g.  2.a 
+// e.g.  2.a :
 // const addTwo = (num1, num2) => num1 + num2  //7  we can write it one line and no neeed to use return and scope
 //   console.log(addTwo(3,4))   // 7
 
 
-// e.g.  2.b
-// const addTwo = (num1, num2) => (num1 + num2 ) // we can write it one line , no neeed to use return and scope when we use { } we have to use return keyword
+// e.g.  2.b:
+// const addTwo = (num1, num2) => (num1 + num2 ) // can write it one line , no neeed to use return and scope when we use { } we have to use return keyword
 //   console.log(addTwo(3,4))   // 7
 
-// e.g.  2.c
+// e.g.  2.c:
 // const addTwo = (num1, num2) => {username:"mahiii"}
-// console.log(addTwo(5,5));      //output: undefined
+// console.log(addTwo(5,5));      //output: undefined because we did not wrap username (obj) with parenthesis // because adding parenthesis() make it a block 
 
-// e.g.  2d
+// e.g.  2d:
 // const addTwo = (num1, num2) => ({ username: "mahiii" }); // note: we have to  wrap the obj or {} in the braces() for the output
 // console.log(addTwo(5, 5)); //output: {username:"mahiii"}
 
 // const myArray = [2, 5, 3, 7, 8]
-//  myArray.forEach()
+// way of accesing Array:
+//  myArray.forEach(function () {})   // way 1
+//  myArray.forEach(() => {})           // way 2
+//  myArray.forEach(() => ())           // way 3 
